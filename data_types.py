@@ -21,3 +21,9 @@ a ={}
 
 #tuple
 a =(2,3,3)
+
+
+a = complex(2,4)
+b = complex(4,6)
+
+print(a+b)
