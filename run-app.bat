@@ -1,1 +1,1 @@
-flask --app src/main.py run --debug --port=8080
+flask --app src/app.py  run --debug --port=8080

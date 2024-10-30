@@ -6,4 +6,4 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-CMD [ "flask", "--app","src/main.py","run","--debug","--host","0.0.0.0"]
+CMD [ "flask", "--app","src/app.py","run","--debug","--host","0.0.0.0"]
