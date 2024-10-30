@@ -1,11 +1,18 @@
-from flask import Flask
+from flask import Flask,render_template,request
 from markupsafe import escape
+import os
+import json 
+
+
 
 app = Flask(__name__)
 
+
+
+
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+   return render_template("index.html",message="Data Passed From Backend")
 
 
 @app.route("/<name>")
@@ -27,3 +34,12 @@ def show_post(post_id):
 def show_subpath(subpath):
     # show the subpath after /path/
     return f'Subpath {escape(subpath)}'
+
+@app.route(rule="/submit/form",methods=['POST'])
+def get_userData():
+    data =  request.get_data()
+    print(data)
+    return data
+
+
+
