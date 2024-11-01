@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,abort,make_response
 from markupsafe import escape
 import os
 import json 
@@ -37,9 +37,18 @@ def show_subpath(subpath):
 
 @app.route(rule="/submit/form",methods=['POST'])
 def get_userData():
-    data =  request.get_data()
-    print(data)
-    return data
+    for data in request.form.items():
+        print(data)
+    return "ddd"
 
+@app.route("/400",)
+def send_400():
+    abort(400)
+
+@app.errorhandler(400)
+def handle_400(eror):
+    resp = make_response(render_template('400.html'), 404)
+    resp.headers['X-Something'] = 'A value'
+    return resp
 
 
