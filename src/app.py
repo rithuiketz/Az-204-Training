@@ -17,7 +17,7 @@ def hello_world():
 
 @app.route("/<name>")
 def get_messgae(name):
-    return name
+    return str(os.environ)
 
 
 @app.route('/user/<username>')
