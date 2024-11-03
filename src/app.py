@@ -1,7 +1,11 @@
-from flask import Flask,render_template,request,abort,make_response
+from flask import Flask,render_template,request,abort,make_response,jsonify
 from markupsafe import escape
 import os
 import json 
+import requests as re
+
+
+MICRO_SERVICE_URL ="http://microservice2.default.svc.cluster.local:8080"
 
 
 
@@ -19,6 +23,11 @@ def hello_world():
 def get_messgae(name):
     return str(os.environ)
 
+@app.route("/microservice/test")
+def sampleMS():
+    resp =  re.get(MICRO_SERVICE_URL+"/dns/checkDNS")
+    body =  jsonify(resp.json())
+    return body
 
 @app.route('/user/<username>')
 def show_user_profile(username):

@@ -1,0 +1,1 @@
+docker build -f Flask_Dockerfile -t rithuikyerrabrolu/microservice1:v1.3 .
