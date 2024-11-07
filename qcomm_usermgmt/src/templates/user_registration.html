@@ -8,11 +8,15 @@
 <body>
 
   <h2>User Registration Form</h2>
-  <form action="/submit" method="post">
+  <form action="/registration" method="post">
     
     <!-- Name Field -->
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
+    <label for="name">fname:</label>
+    <input type="text" id="fname" name="fname" required size="20">
+    <br><br>
+
+    <label for="name">lname:</label>
+    <input type="text" id="lname" name="lname" required size="10">
     <br><br>
     
     <!-- Email Field -->
@@ -27,7 +31,7 @@
     
     <!-- Communication Type Dropdown -->
     <label for="communicationType">Preferred Communication Type:</label>
-    <select id="communicationType" name="communicationType" required>
+    <select id="prefferd_c_type" name="prefferd_c_type" required>
       <option value="email">Email</option>
       <option value="sms">SMS</option>
     </select>
@@ -35,7 +39,7 @@
     
     <!-- Consent Checkbox -->
     <label for="consent">Chosen to Communicate:</label>
-    <input type="checkbox" id="consent" name="consent" value="yes">
+    <input type="checkbox" id="enableNotification" name="consent" value="True">
     <label for="consent">Yes</label>
     <br><br>
     
