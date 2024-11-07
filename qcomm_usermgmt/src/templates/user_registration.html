@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration Form</title>
+</head>
+<body>
 
-    <head>
+  <h2>User Registration Form</h2>
+  <form action="/submit" method="post">
+    
+    <!-- Name Field -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br><br>
+    
+    <!-- Email Field -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+    
+    <!-- Date of Birth Field -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+    <br><br>
+    
+    <!-- Communication Type Dropdown -->
+    <label for="communicationType">Preferred Communication Type:</label>
+    <select id="communicationType" name="communicationType" required>
+      <option value="email">Email</option>
+      <option value="sms">SMS</option>
+    </select>
+    <br><br>
+    
+    <!-- Consent Checkbox -->
+    <label for="consent">Chosen to Communicate:</label>
+    <input type="checkbox" id="consent" name="consent" value="yes">
+    <label for="consent">Yes</label>
+    <br><br>
+    
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+  
+  </form>
 
-    </head>
-    <body>
-       
-
-    </body>
+</body>
 </html>
