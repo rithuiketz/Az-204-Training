@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,abort,make_response,jsonify
 from markupsafe import escape
 from models.user_registration import UserRegistration
+from service.UserService  import UserService
 
 
 app  =  Flask(__name__)
@@ -21,8 +22,9 @@ def save_user():
     form  =  request.form.to_dict()
     user_reg =  UserRegistration()
     for item in form.items():
-        key  =  item[0].strip()
+        key  =  item[0]
         val =item[1]
-        print(f"{key} {val}")
         user_reg.set_form_data(name=key,value=val)
-    return "ss" 
+    usr_svc:UserService =  UserService()
+    usr_svc.user_registration(user_reg)
+    return "Success"

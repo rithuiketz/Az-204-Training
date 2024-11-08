@@ -1,21 +1,24 @@
 from datetime import datetime,date
 import sys
+import json
 class UserRegistration():
-    fname:str
-    lname:str
-    mobile:str
-    email:str
-    dob:datetime
-    prefferd_c_type:str
-    enableNotification:bool
+   
+    def __init__(self):
+        self.fname:str = None
+        self.lname:str = None
+        self.mobile:str = None
+        self.email:str = None
+        self.dob:datetime = None
+        self.prefferd_c_type:str = None
+        self.enableNotification:bool = None
+
 
     def set_form_data(self, name, value):
-        print(f" {name}  {value}")
         if name == "fname":
             self.fname = value
             return
         if name == "lname":
-            self.lname == value
+            self.lname =value
             return
         if name == "mobile":
             self.mobile =value
@@ -34,4 +37,7 @@ class UserRegistration():
             return
         else:
             raise Exception(f"No Property found with Name {name}")
+        
+
+
 

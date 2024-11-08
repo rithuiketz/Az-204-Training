@@ -1,0 +1,12 @@
+FROM python:3
+
+WORKDIR /usr
+
+COPY . .
+
+RUN pip install -r requirements.txt
+
+EXPOSE 8080
+
+CMD [ "flask", "--app","qcomm_usermgmt/src/app.py","run","--debug","--host","0.0.0.0","--port","8080"]
+
