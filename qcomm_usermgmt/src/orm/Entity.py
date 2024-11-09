@@ -31,12 +31,3 @@ class User(Base):
    lname:Mapped[str] = mapped_column(String(20))
    dob:Mapped[DATE] = mapped_column(DATETIME)
    password:Mapped[str] = mapped_column(String(255),name="pwd",default=generate_random_password)
-
-class UserPRef(Base):
-   pass
-
-class UserComms(Base):
-   pass
-
-class UserSession(Base):
-   pass

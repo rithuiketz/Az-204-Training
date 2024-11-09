@@ -7,7 +7,7 @@ from sqlalchemy import URL
 class DBService():
 
     def __init__(self):
-        self.url = URL.create("postgresql+psycopg2",username="postgres",password="root",host="localhost",database="postgres",port="5432")
+        self.url = URL.create("postgresql+psycopg2",username="postgres",password="root",host="host.docker.internal",database="postgres",port="5432")
 
     
     def persist_obj(self,obj):

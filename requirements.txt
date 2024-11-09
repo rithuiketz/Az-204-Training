@@ -2,3 +2,4 @@ Flask
 setuptools
 pytest
 SQLAlchemy
+psycopg2
