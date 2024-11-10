@@ -10,12 +10,13 @@
   <h2>User Registration Form</h2>
   <form action="/registration" method="post">
     
-    <!-- Name Field -->
-    <label for="name">fname:</label>
+    <!-- First Name Field -->
+    <label for="fname">First Name:</label>
     <input type="text" id="fname" name="fname" required size="20">
     <br><br>
 
-    <label for="name">lname:</label>
+    <!-- Last Name Field -->
+    <label for="lname">Last Name:</label>
     <input type="text" id="lname" name="lname" required size="10">
     <br><br>
     
@@ -28,12 +29,41 @@
     <label for="dob">Date of Birth:</label>
     <input type="date" id="dob" name="dob" required>
     <br><br>
+
+    <!-- Address Line 1 Field -->
+    <label for="address_line_1">Address Line 1:</label>
+    <input type="text" id="address_line_1" name="address_line_1" required>
+    <br><br>
+
+    <!-- Address Line 2 Field -->
+    <label for="address_line_2">Address Line 2:</label>
+    <input type="text" id="address_line_2" name="address_line_2">
+    <br><br>
+
+    <!-- City Field -->
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+    <br><br>
+
+    <!-- Zipcode Field -->
+    <label for="zipcode">Zipcode:</label>
+    <input type="text" id="zipcode" name="zipcode" required>
+    <br><br>
     
-    <!-- Communication Type Dropdown -->
-    <label for="communicationType">Preferred Communication Type:</label>
+    <!-- Preferred Communication Type Dropdown -->
+    <label for="prefferd_c_type">Preferred Communication Type:</label>
     <select id="prefferd_c_type" name="prefferd_c_type" required>
       <option value="email">Email</option>
       <option value="sms">SMS</option>
+    </select>
+    <br><br>
+    
+    <!-- Auth Mode Dropdown -->
+    <label for="auth_mode">Authentication Mode:</label>
+    <select id="auth_mode" name="auth_mode" required>
+      <option value="sso">SSO</option>
+      <option value="password">Password</option>
+      <option value="mfa">MFA</option>
     </select>
     <br><br>
     
@@ -41,6 +71,12 @@
     <label for="consent">Chosen to Communicate:</label>
     <input type="checkbox" id="enableNotification" name="consent" value="True">
     <label for="consent">Yes</label>
+    <br><br>
+
+    <!-- Mfa Enabled Checkbox -->
+    <label for="consent">Enable MFA:</label>
+    <input type="checkbox" id="enableMfa" name="enableMfa" value="True">
+    <label for="enableMfa">Yes</label>
     <br><br>
     
     <!-- Submit Button -->

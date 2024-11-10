@@ -27,4 +27,8 @@ def save_user():
         user_reg.set_form_data(name=key,value=val)
     usr_svc:UserService =  UserService()
     usr_svc.user_registration(user_reg)
+    usr_svc.user_auth(user_reg)
+    usr_svc.user_communication(user_reg)
+    usr_svc.user_pref(user_reg)
+    usr_svc.user_sess(user_reg)
     return "Success"
