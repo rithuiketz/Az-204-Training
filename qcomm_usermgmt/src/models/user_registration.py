@@ -10,7 +10,7 @@ class UserRegistration():
         self.email:str = None
         self.dob:datetime = None
         self.prefferd_c_type:str = None
-        self.enableNotification:bool = None
+        self.enableNotification:bool = False
         self.address_line_1:str = None
         self.address_line_2:str = None
         self.city:str = None
@@ -38,7 +38,7 @@ class UserRegistration():
         if name == "prefferd_c_type":
             self.prefferd_c_type =  value
             return
-        if name == "enableNotification":
+        if name == "consent":
             self.enableNotification =  bool(value)
             return
         if name == "address_line_1":

@@ -3,3 +3,4 @@ setuptools
 pytest
 SQLAlchemy
 psycopg2
+pyjwt

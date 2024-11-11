@@ -1,1 +1,3 @@
 qcomm_usermgmt/src/orm/__pycache__/*
+qcomm_usermgmt/src/orm/__pycache__/Entity.cpython-310.pyc
+*.cpython*
