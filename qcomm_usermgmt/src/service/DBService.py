@@ -2,7 +2,8 @@ from hashlib import sha256
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session,sessionmaker
 from sqlalchemy import URL
-from orm.Entity import User
+from orm.Entity import User,UserCommunications,UserAuth
+from sqlalchemy import select
 
 
 class DBService():
@@ -16,8 +17,12 @@ class DBService():
             session.add(obj)
             session.commit()
     
-    def get_user_by_id(self,email,password):
-        session:Session = sessionmaker(bind=self.engine)
-        session.query(User).filter_by(email=email,password=password)
+    def get_user_by_login(self,login):
+        data ={}
+        with Session(self.engine) as session:
+            data = session.execute(select(UserAuth).where(UserAuth.login==login)).first()
+            
+        return data
+
 
         

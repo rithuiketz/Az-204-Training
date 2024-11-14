@@ -1,21 +1,18 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: MYAPP
-  namespace: default
+  name: usermgmt2
+  namespace: onlineordermanagement
 spec:
   selector:
-    app: MYAPP
+    app: usermgmt2
   type: ClusterIP
   sessionAffinity: None
   sessionAffinityConfig:
     clientIP:
       timeoutSeconds: 10800
   ports:
-  - name: MYAPP
+  - name: usermgmt2
     protocol: TCP
-    port: 
-    targetPort: 
-    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
-    # you can specify a value in the `spec.ports[*].nodePort` field.
-    nodePort: 
+    port: 9090
+    targetPort: 8080

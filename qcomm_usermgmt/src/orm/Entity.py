@@ -28,6 +28,7 @@ def generate_random_password():
   return hash_password
     
 
+
 class User(Base):
    __tablename__="users"
    __table_args__={'schema': 'user_mgmt'}
@@ -35,11 +36,12 @@ class User(Base):
    fname:Mapped[str] = mapped_column(String(20))
    lname:Mapped[str] = mapped_column(String(20))
    dob:Mapped[DATE] = mapped_column(DATETIME)
-   password:Mapped[str] = mapped_column(String(255),name="pwd",default=generate_random_password)
+
    communications: Mapped["UserCommunications"] = relationship("UserCommunications")
    #preferences : Mapped["UserPref"] = relationship("UserPref", back_populates="user")
    #authMode : Mapped["UserAuth"] = relationship("UserAuth", back_populates="user")
    #session : Mapped["UserSession"] = relationship("UserSession", back_populates="user")
+   user_auth:Mapped["UserAuth"] = relationship("UserAuth",back_populates="user")
 
 class UserCommunications(Base):
    __tablename__="user_communications"
@@ -49,6 +51,18 @@ class UserCommunications(Base):
    value:Mapped[str] = mapped_column(String(20))
    choosen_to_communicate:Mapped[bool] = mapped_column(BOOLEAN,name="choosen_to_communicate")
    #user: Mapped["User"] = relationship("User", back_populates="communications")
+
+class UserAuth(Base):
+  __tablename__="user_auth"
+  __table_args__={"schema":"user_mgmt"}
+  user_id:Mapped[UUID] = mapped_column(String(255),ForeignKey("user_mgmt.users.user_id"),primary_key=True)
+  password:Mapped[str] = mapped_column(String(255),name="pwd",default=generate_random_password)
+  auth_mode:Mapped[str] = mapped_column(String(255),name="auth_mode",default="pwd")
+  two_factor_enabled:Mapped[bool] = mapped_column(BOOLEAN,default=False)
+  reset_pwd:Mapped[bool] =mapped_column(BOOLEAN,default=False,name="reset_pwd_on_first_login")
+  login:Mapped[str] = mapped_column(String,nullable=False)
+  user:Mapped["User"]  = relationship("User",lazy=False)
+
    
   
 

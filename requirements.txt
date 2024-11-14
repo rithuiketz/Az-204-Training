@@ -4,3 +4,4 @@ pytest
 SQLAlchemy
 psycopg2
 pyjwt
+pykafka
