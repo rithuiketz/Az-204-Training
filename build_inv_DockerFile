@@ -1,0 +1,5 @@
+FROM python:3
+WORKDIR /usr
+COPY . .
+RUN pip install -r requirements.txt
+CMD [ "flask", "--app","qcomm_invmgmt/app.py","run","--debug","--host","0.0.0.0","--port","9090"]

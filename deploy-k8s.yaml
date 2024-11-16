@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: invmgmt
+  namespace: onlineordermanagement
+  labels:
+    app: invmgmt
+spec:
+  selector:
+    matchLabels:
+      app: invmgmt
+  template:
+    metadata:
+      labels:
+        app: invmgmt
+    spec:
+      containers:
+      - name: invmgmtdeployment
+        image: rithuikyerrabrolu/invmgmt:v1.0
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9090
+        imagePullPolicy: Always
