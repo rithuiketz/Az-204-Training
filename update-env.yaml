@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "usermgmt2"
+  namespace: onlineordermanagement
+  labels:
+    app: "usermgmt2"
+spec:
+  containers:
+  - name: usermgmt2
+    image: rithuikyerrabrolu/usermgmt:v1.0
+    env:
+    - name: JWT_KEY
+      valueFrom:
+        secretKeyRef:
+          name: jwt-info
+          key: key

@@ -1,1 +1,1 @@
-docker build  -f Order_Managment_Dockerfile -t onlineordering/usermgmt:v1.0 .
+docker build  -f Order_Managment_Dockerfile -t rithuikyerrabrolu/usermgmt:v1.0 .
