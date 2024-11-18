@@ -1,10 +1,8 @@
-
-from orm.Entity import User, UserCommunications,UserAuth #, UserAuth, UserSession, UserPref
 from services.DBService import DBService
 from datetime import datetime
 from orm.Entity import Category, SKU, SKUBrand, Seller
 
-class UserService():
+class InventoryData():
 
     def __init__(self):
         self.db_svc =  DBService()

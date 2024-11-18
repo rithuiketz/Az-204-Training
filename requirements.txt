@@ -1,3 +1,7 @@
 Flask
+setuptools
 pytest
-SqlAlchemy
+SQLAlchemy
+psycopg2-binary
+pyjwt
+pykafka
