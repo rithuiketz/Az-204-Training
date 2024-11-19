@@ -1,1 +1,1 @@
-flask run --debug --host 127.0.0.1 --port 9090
+flask --app qcomm_invmgmt/app.py  run --debug --port=9090

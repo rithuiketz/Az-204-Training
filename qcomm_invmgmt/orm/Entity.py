@@ -84,7 +84,7 @@ class SKU(Base):
     sku_brand: Mapped[UUID] = mapped_column(
         UUID, ForeignKey("inventory.sku_brand.brand_id"), nullable=False
     )
-    seller_id: Mapped[UUID] = mapped_column(
+    seller: Mapped[UUID] = mapped_column(
         UUID, ForeignKey("inventory.seller.seller_id"), nullable=False
     )
 
