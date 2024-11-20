@@ -5,17 +5,15 @@ metadata:
   namespace: onlineordermanagement
 spec:
   selector:
-    app: invmgmt
-  type: NodePort
+    app: invmgmt4
+  type: ClusterIP
   sessionAffinity: None
   sessionAffinityConfig:
     clientIP:
       timeoutSeconds: 10800
   ports:
-  - name: invmgmt
+  - name: invmgmt4
     protocol: TCP
     port: 3030
     targetPort: 9090
-    # If you set the `spec.type` field to `NodePort` and you want a specific port number,
-    # you can specify a value in the `spec.ports[*].nodePort` field.
-    nodePort: 30001
+    

@@ -36,7 +36,11 @@ class Category(Base):
     cat_desc: Mapped[str] = mapped_column(String(100), nullable=True)
 
     # Relationship with SKU
-    skus: Mapped["SKU"] = relationship("SKU", back_populates="category")
+    skus: Mapped["SKU"] = relationship(
+        "SKU",
+        back_populates="category",
+        primaryjoin="Category.cat_id == SKU.sku_category",
+    )
 
 
 # Brand Table
@@ -49,7 +53,11 @@ class SKUBrand(Base):
     brand_desc: Mapped[str] = mapped_column(String(100), nullable=True)
 
     # Relationship with SKU
-    skus: Mapped["SKU"] = relationship("SKU", back_populates="brand")
+    skus: Mapped["SKU"] = relationship(
+        "SKU",
+        back_populates="brand",
+        primaryjoin="SKUBrand.brand_id == SKU.sku_brand",
+    )
 
 
 # Seller Table
@@ -64,7 +72,11 @@ class Seller(Base):
     address: Mapped[str] = mapped_column(String(60), nullable=False)
 
     # Relationship with SKU
-    skus: Mapped["SKU"] = relationship("SKU", back_populates="seller")
+    skus: Mapped["SKU"] = relationship(
+        "SKU",
+        back_populates="seller",
+        primaryjoin="Seller.seller_id == SKU.seller_id",
+    )
 
 
 # SKU Table
@@ -84,7 +96,7 @@ class SKU(Base):
     sku_brand: Mapped[UUID] = mapped_column(
         UUID, ForeignKey("inventory.sku_brand.brand_id"), nullable=False
     )
-    seller: Mapped[UUID] = mapped_column(
+    seller_id: Mapped[UUID] = mapped_column(
         UUID, ForeignKey("inventory.seller.seller_id"), nullable=False
     )
 

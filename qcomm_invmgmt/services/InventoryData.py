@@ -27,6 +27,7 @@ class InventoryData():
         category=category[0],
         brand=brand[0],
         seller=seller[0])
+        
         self.db_svc.persist_obj(sku)
     
 

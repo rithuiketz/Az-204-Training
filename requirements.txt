@@ -2,6 +2,7 @@ Flask
 setuptools
 pytest
 SQLAlchemy
-psycopg2-binary
+psycopg2
 pyjwt
 pykafka
+requests
