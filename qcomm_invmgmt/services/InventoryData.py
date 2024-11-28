@@ -30,7 +30,16 @@ class InventoryData():
         
         self.db_svc.persist_obj(sku)
     
+class TemplateGenerator():
 
-    
-
-        
+    def writeFile(self):
+        cols = ["SKU NAME,SKU DESC,CATEGORY,BRAND,SELLER_ID"]
+        rows =[
+                "T SHIRT BLUE XL,T SHIRT OF XL SIZE,APPEARNCES & WEARABLE,LP,89b7fcfb-b2f3-4c7f-8cf5-e43d8dfc29e1",
+                "FOSSIL WATCH,DESC,APPEARNCES & WEARABLE,FOSSIL,89b7fcfb-b2f3-4c7f-8cf5-e43d8dfc29e1"
+            ]
+        str_data = cols[0]
+        for row in rows:
+            str_data+="\n"
+            str_data+=row
+        return str_data

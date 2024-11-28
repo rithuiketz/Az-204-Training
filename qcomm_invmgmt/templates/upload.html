@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <a href="/template">Download Template</a>
+    <body>
+        <form method="post" enctype="multipart/form-data" action="/inv/upload">
+            <input type="file" name="inv_data" id="form">
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+    <ul>
+        {% for item in data %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    </ul>
+
+</html>
