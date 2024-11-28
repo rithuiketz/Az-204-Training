@@ -5,3 +5,8 @@ qcomm_usermgmt/src/__pycache__/app.cpython-310.pyc
 qcomm_usermgmt/src/__pycache__/app.cpython-310.pyc
 qcomm_usermgmt/src/__pycache__/app.cpython-310.pyc
 qcomm_usermgmt/src/__pycache__/app.cpython-310.pyc
+qcomm_usermgmt/src/orm/__pycache__/Entity.cpython-310.pyc
+qcomm_usermgmt/src/service/__pycache__/DBService.cpython-310.pyc
+qcomm_usermgmt/src/service/__pycache__/DBService.cpython-310.pyc
+*.pyc
+qcomm_usermgmt/src/service/__pycache__/DBService.cpython-310.pyc
