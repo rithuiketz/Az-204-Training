@@ -4,3 +4,5 @@ qcomm_invmgmt/orm/Entity.py
 qcomm_invmgmt/orm/__pycache__/Entity.cpython-310.pyc
 qcomm_invmgmt/services/__pycache__/DBService.cpython-310.pyc
 qcomm_invmgmt/services/__pycache__/InventoryData.cpython-310.pyc
+__pycache__/app.cpython-310.pyc
+qcomm_invmgmt/__pycache__/app.cpython-310.pyc

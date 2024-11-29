@@ -4,7 +4,7 @@ from services import DBService
 from services.InventoryData import InventoryData,TemplateGenerator
 import requests as re
 
-from msal import PublicClientApplication
+from msal import PublicClientApplication,ConfidentialClientApplication
 
 import os
 app  =  Flask(__name__)
@@ -55,7 +55,11 @@ def download_template():
 
 @app.route("/msal")
 def msal_check():
-    app =  PublicClientApplication('2b809f53-439a-4432-9378-40b14314116e')
-    result = app.acquire_token_interactive(scopes=["scope_"])
+    app =  ConfidentialClientApplication(client_id='2b809f53-439a-4432-9378-40b14314116e',client_credential='fUK8Q~h~ns-oSVzYUaA5FlNLXzZYxKnVpmnwnbXL',
+                                         authority="https://login.microsoftonline.com/d73f6f5b-ef95-47df-92d1-c327390691b0"
+                                         
+                                         )
+    result  = app.acquire_token_for_client(scopes=["2b809f53-439a-4432-9378-40b14314116e/.default"])
+    #result = app.acquire_token_interactive(scopes=["scope_"])
     return str(result)
 
