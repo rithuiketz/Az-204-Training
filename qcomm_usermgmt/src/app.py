@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request,abort,make_response,jsonify,redirect
 from markupsafe import escape
-from models.user_registration import UserRegistration
-from service.UserService  import UserService
+from qcomm_usermgmt.src.models.user_registration import UserRegistration
+from qcomm_usermgmt.src.service.UserService  import UserService
 import jwt
 from datetime import datetime,timedelta
 import os
