@@ -1,7 +1,7 @@
 #from src.utils.business_service import sum
 from pytest import fixture
 from flask import Flask
-from src.app import app
+from app import app
 
 
 
