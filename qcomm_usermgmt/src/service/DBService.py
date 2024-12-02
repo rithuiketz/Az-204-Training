@@ -2,7 +2,7 @@ from hashlib import sha256
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session,sessionmaker
 from sqlalchemy import URL
-from orm.Entity import User,UserCommunications,UserAuth
+from qcomm_usermgmt.src.orm.Entity import User,UserCommunications,UserAuth
 from sqlalchemy import select
 import os
 
