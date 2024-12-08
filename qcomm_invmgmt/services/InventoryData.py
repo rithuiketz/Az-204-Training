@@ -1,6 +1,6 @@
-from services.DBService import DBService
+from qcomm_invmgmt.services.DBService import DBService
 from datetime import datetime
-from orm.Entity import Category, SKU, SKUBrand, Seller
+from qcomm_invmgmt.orm.Entity import Category, SKU, SKUBrand, Seller
 
 class InventoryData():
 
