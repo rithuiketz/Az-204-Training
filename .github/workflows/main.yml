@@ -1,4 +1,4 @@
-name: Deploy Application To AKS
+name: Create User Management Artifact
 on: workflow_dispatch
 jobs:
   build_app:
@@ -14,8 +14,11 @@ jobs:
           python-version: '3.13'
       - name: Install Deps
         run: pip install -r requirements.txt
-      - name: Run The Contents
-        run: ls
       - name: Run Pytest
         run: pytest
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: .
+      
   
