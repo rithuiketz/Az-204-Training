@@ -1,0 +1,19 @@
+name: Deploy Application To AKS
+on: workflow_dispatch
+jobs:
+  build_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone The Code
+        uses: actions/checkout@v4
+        with:
+          ref: usermanagement
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
+      - name: Run The Contents
+        run: ls
+      - name: Run Pytest
+        run: pytest
+  
