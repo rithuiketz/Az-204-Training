@@ -73,6 +73,8 @@ jobs:
     steps:
       # Checks out the repository this file is in
       - uses: actions/checkout@v4
+        with:
+          ref: usermanagement
 
       # Logs in with your Azure credentials
       - name: Azure login
