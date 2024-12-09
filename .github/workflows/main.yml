@@ -19,7 +19,7 @@ jobs:
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: User_Mgmt_{{github.run_id}}.zip
+          name: User_Mgmt_${{github.run_id}}.zip
           path: .
       
   
