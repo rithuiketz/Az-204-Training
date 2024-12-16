@@ -1,1 +1,1 @@
-flask --app qcomm_usermgmt/src/app.py  run --debug --port=8080
+flask --app app.py  run --debug --port=8080
